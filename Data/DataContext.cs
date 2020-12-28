@@ -10,8 +10,17 @@ namespace testeef.Data
         {
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder
+                .Entity<CategoryProduct>()
+                .HasKey(sc => new { sc.categoryid, sc.productid });
+        }
+
         public DbSet<Product> products { get; set; }
 
         public DbSet<Category> categories { get; set; }
+
+        public DbSet<CategoryProduct> categoryProducts { get; set; }
     }
 }

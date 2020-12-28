@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace testeef.Models
@@ -17,5 +18,7 @@ namespace testeef.Models
         public int categoryid { get; set; }
 
         public Category category { get; set; }
+
+        public ICollection<CategoryProduct> categoryProducts { get; set; }
     }
 }
